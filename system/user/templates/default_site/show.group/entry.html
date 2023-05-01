@@ -1,0 +1,23 @@
+{layout="layouts/main"}
+
+{exp:channel:entries channel="show" url_title="{segment_3}"}
+
+{layout:set name="title"}{title}{/layout:set}
+{featured_image}
+<img src="{url}"
+     alt="{title}">
+{/featured_image}
+
+<h3 class="h4 card-link__heading">
+    {title}
+</h3>
+<h4>{description}</h4>
+<time datetime="{show_date format='%Y-%m-%d'}">
+    {if show_date}
+    {show_date format="%D %d %M %Y"}
+    {if:else}
+    dates to be announced
+    {/if}
+</time>
+
+{/exp:channel:entries}

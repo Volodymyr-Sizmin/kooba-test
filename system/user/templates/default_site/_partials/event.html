@@ -1,0 +1,87 @@
+<article class="card-link"
+         style="transition-delay: 0s;">
+    <div class="card-link__image">
+        <a href="/show/{url_title}"
+           class="card-link__image-link">
+            <picture>
+                <!-- 400 x 400 -->
+                {featured_image}
+                <img src="{url}"
+                     alt="{title}"
+                     class="card-link__image-source">
+                {/featured_image}
+            </picture>
+        </a>
+    </div>
+    <div class="card-link__content">
+        <div class="card-link__titles">
+            <h3 class="h4 card-link__heading">
+                <a class="card-link__heading-link"
+                   href="/show/{url_title}">{title}</a>
+            </h3>
+            {if show_date}
+            <p class="card-link__sub-heading">
+                <time datetime="{show_date format='%Y-%m-%d'}">
+                    {show_date format="%D %d %M %Y"}
+
+                </time>
+            </p>
+        </div>
+
+        <div class="card-link__info">
+            <ul class="card-link__list">
+
+
+            </ul>
+
+            <div class="card-link__ctas">
+                <div class="inline-ctas">
+                    <a href="/show/{url_title}"
+                       class="inline-ctas__cta text-pink">
+                        <span class="inline-ctas__text">Learn more</span>
+                        <i class="icon-right-arrow inline-ctas__arrow"></i>
+                    </a>
+
+                    <a href="/show/{url_title}"
+                       target="_blank"
+                       rel="noreferrer"
+                       class="inline-ctas__cta text-white">
+                        <i class="icon-ticket inline-ctas__icon"></i>
+                        <span class="inline-ctas__text">Buy Now</span>
+                        <i class="icon-right-arrow inline-ctas__arrow"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+    {if:else}
+    dates to be announced
+    <div class="card-link__info">
+        <ul class="card-link__list">
+            <li class="card-link__item">
+                <span class="card-link__item-title">On Sale</span>
+                <span class="card-link__item-description"><time datetime="{sales_start_date format='%Y-%m-%d'}">{sales_start_date format="%g%a %D %d %M %Y"}</time></span>
+            </li>
+
+        </ul>
+
+        <div class="card-link__ctas">
+            <div class="inline-ctas">
+                <a href="/show/{url_title}"
+                   class="inline-ctas__cta text-pink">
+                    <span class="inline-ctas__text">Learn more</span>
+                    <i class="icon-right-arrow inline-ctas__arrow"></i>
+                </a>
+
+                <a href="#"
+                   class="inline-ctas__cta text-white"
+                   download="">
+                    <i class="icon-calendar inline-ctas__icon"></i>
+                    <span class="inline-ctas__text">Remind me</span>
+                    <i class="icon-right-arrow inline-ctas__arrow"></i>
+                </a>
+            </div>
+        </div>
+    </div>
+    {/if}
+</article>
